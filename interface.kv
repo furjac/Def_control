@@ -1,0 +1,63 @@
+<TooltipButton@Button+MDTooltip>
+
+<Interface>
+    MDFloatLayout:
+        MDLabel:
+            id: def_label
+            text: "Defender is enabled or disabled"
+            color: "green"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.945}
+            #md_bg_color: "green"
+            halign: "center"
+        TooltipButton:
+            background_color: 0,0,0,0
+            size_hint: .35,.7
+            tooltip_text: "Refresh"
+            pos_hint: {'center_x': 0.2, 'center_y': 0.5}
+            on_release: root.change_icon()
+
+            Image:
+                id: button_image
+                source: 'true.png'
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+                size: 225,225
+
+        MDRectangleFlatIconButton:
+            icon: "shield-off"
+            text: "Disable Antivirus"
+            md_bg_color: "red"
+            text_color: "white"
+            line_color: 0, 0, 0, 0
+            pos_hint: {'center_x': 0.7, 'center_y': 0.76}
+            on_release: root.disable_antivirus()
+
+        
+        MDRectangleFlatIconButton:
+            icon: "shield-check"
+            text: "Enable Antivirus"
+            md_bg_color: "green"
+            text_color: "white"
+            line_color: 0, 0, 0, 0
+            pos_hint: {'center_x': 0.7, 'center_y': 0.46}
+            on_release: root.enable_antivirus()
+
+        MDRectangleFlatIconButton:
+            icon:"security"
+            text: "open security center"
+            md_bg_color: "blue"
+            text_color: "white"
+            line_color: 0, 0, 0, 0
+            pos_hint: {'center_x': 0.6, 'center_y': 0.2}
+            on_release: root.open_defender()
+
+
+        MDRectangleFlatIconButton:
+            id: dropdown
+            icon:"security"
+            text: "Menu"
+            md_bg_color: "white"
+            text_color: "black"
+            line_color: 0, 0, 0, 1
+            pos_hint: {'center_x': 0.855, 'center_y': 0.2}
+            on_release: root.dropdown()
